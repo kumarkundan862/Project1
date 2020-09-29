@@ -1,49 +1,66 @@
-/*Tihis is the commit option doen*/
-afdsafage om. jompany;
+package com.Conditionals;
+
 import java.util.Scanner;
-public class Numbers {
+class IncomeTaxPaid {
 
-    public static void main(String[] args) {
-          /*
-          System.out.println("Hello IntelliJ");
+    public static void main(String args[]) {
+        Scanner scan = new Scanner(System.in);
+        // Enter annual income
+        double income = scan.nextDouble();
+        // Enter age
+        int age = scan.nextInt();
 
-        int a = 5; int b = 4; int c = 3;
+        double tax = 0.0;
 
-        int z = a + b - c * a;
 
-        System.out.println(z);
+        //Consider first range of income
+        if (income<= 250000)
+            System.out.println("No Tax applicable");
+       /* if (250000< income && income>= 300000){
+            if(age<60)
+                tax = 0.10*(income - 250000);
+            if(60<= age && age< 80)
+            System.out.println("No Tax applicable");
+            if (age>=80)
+                System.out.println("No Tax applicable");
+        }  */
 
+        //Consider second range of income
+        if (250001 < income && income <= 500000){
+            if(age<60)
+                tax =  0.10*(income-250000);
+            if(60<= age && age < 80)
+            tax = 0.1* (income-250000);
+            if (age>=80)
+                System.out.println("No Tax applicable");
+        }
+
+        //Consider third range of income
+
+        if (500001 < income  && income <= 1000000){
+            if(age<60)
+                tax = 0.1*(500000-250000) + 0.2*(income-500000) ;
+            if(60<= age && age < 80)
+            tax =  0.1*(500000-250000) + 0.2*(income-500000);
+            if (age>=80)
+                tax = 0.2*(income-500000);
+        }
+
+
+        //Consider fourth range of income
+
+        if (income > 1000000){
+            if(age<60)
+                tax = 0.1 * (500000 - 250000) + 0.2 * (1000000 - 500000) + 0.3 * (income - 1000000);
+
+            if(60<= age && age < 80)
+            tax =  0.1*(500000-250000) + 0.2*(1000000-500000) + 0.3*(income - 1000000);
+            if (age>=80)
+                tax = 0.2*(1000000-500000) +  0.3*(income - 1000000);
+        }
+
+
+        System.out.print(tax);
+        scan.close();
     }
 }
-*/
-        //Create new scanner
-        Scanner input = new Scanner(System.in);
-
-        //Values of each digit
-        int tenThousands, thousands, hundreds, tens, ones;
-
-        //Prompt user to input 5 digit number
-
-        int number = input.nextInt();
-        if (number > 99999) {
-            System.out.println("\nError! Number more than 5 digits.");
-        }
-        else if (number < 10000) {
-            System.out.println("Error! Number less than 5 digits.");
-        }
-        else if (10000<=number&&number<=99999){
-            ones = number % 10 ;
-            number = number/10;
-            tens = number % 10 ;
-            number = number/10;
-            hundreds = number % 10 ;
-            number = number/10;
-            thousands = number % 10 ;
-            number = number/10;
-            tenThousands= number % 10 ;
-            number = number/10;
-            System.out.println(tenThousands+"\n"+thousands+"\n"+hundreds+"\n"+tens+"\n"+ones);
-              fvdg fh h!q
-		     t
-		    :wq
-
